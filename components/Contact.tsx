@@ -62,62 +62,65 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-sm sm:text-base md:text-lg text-slate-300 font-sans leading-relaxed"
           >
-            Reach out directly for reservations, bonfire arrangements, private
-            transfers, and waterfall excursions.
+            Contact our dedicated WhatsApp hotline or call our direct voice lines
+            for room bookings, bonfire arrangements, and guided tours.
           </motion.p>
         </div>
 
-        {/* Direct Contact & Location Cards Grid (Clean 3-column layout) */}
+        {/* Direct Contact & Location Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Primary Phone Card */}
+          {/* Card 1: Official WhatsApp Hotline (Exclusively +94 77 383 8251) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
             transition={{ duration: 0.6 }}
-            className="rounded-2xl p-6 bg-[#071521]/85 backdrop-blur-md border border-[#1E384D] hover:border-[#1FA2E1]/50 transition-all duration-300 shadow-xl flex flex-col justify-between"
+            className="rounded-2xl p-6 bg-[#071521]/90 backdrop-blur-md border-2 border-[#25D366]/40 hover:border-[#25D366] transition-all duration-300 shadow-xl flex flex-col justify-between relative overflow-hidden"
           >
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#25D366]/10 rounded-full blur-2xl pointer-events-none" />
+
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#1FA2E1]/20 text-[#1FA2E1] border border-[#1FA2E1]/30">
-                  Primary Line
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#25D366]/20 text-[#25D366] border border-[#25D366]/30">
+                  <MessageCircle className="w-3.5 h-3.5" />
+                  <span>WhatsApp Line</span>
                 </span>
                 <span className="text-xs text-slate-400 flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-[#1FA2E1]" /> Available Daily
+                  <Clock className="w-3.5 h-3.5 text-[#25D366]" /> Available Daily
                 </span>
               </div>
 
-              <div className="text-2xl sm:text-3xl font-bold text-white tracking-wide font-sans mb-2">
-                071 920 3976
+              <div className="text-2xl sm:text-3xl font-bold text-white tracking-wide font-sans mb-1.5">
+                077 383 8251
               </div>
 
-              <p className="text-xs text-slate-400 mb-6">
-                Direct inquiries, bookings & WhatsApp support.
+              <p className="text-xs text-slate-300 mb-6">
+                Our official WhatsApp number for instant chat, inquiries, and booking confirmations.
               </p>
             </div>
 
             <div className="grid grid-cols-2 gap-3 pt-2">
               <a
-                href="tel:+94719203976"
-                className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/25 text-white font-medium text-xs sm:text-sm transition-all border border-white/10"
-              >
-                <Phone className="w-4 h-4 text-[#1FA2E1]" />
-                <span>Call Now</span>
-              </a>
-
-              <a
-                href="https://wa.me/94719203976"
+                href="https://wa.me/94773838251"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] active:scale-[0.98] text-white font-medium text-xs sm:text-sm shadow-md transition-all"
+                className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] active:scale-[0.98] text-white font-semibold text-xs sm:text-sm shadow-lg shadow-[#25D366]/25 transition-all"
               >
                 <MessageCircle className="w-4 h-4" />
                 <span>WhatsApp</span>
               </a>
+
+              <a
+                href="tel:+94773838251"
+                className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/25 text-white font-medium text-xs sm:text-sm transition-all border border-white/10"
+              >
+                <Phone className="w-4 h-4 text-[#1FA2E1]" />
+                <span>Call Line</span>
+              </a>
             </div>
           </motion.div>
 
-          {/* Secondary Phone Card */}
+          {/* Card 2: Direct Phone Call Lines (Calls Only - No WhatsApp) */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -127,45 +130,61 @@ export default function Contact() {
           >
             <div>
               <div className="flex items-center justify-between mb-4">
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#648486]/20 text-[#8ba9ab] border border-[#648486]/30">
-                  Secondary Line
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#1FA2E1]/20 text-[#1FA2E1] border border-[#1FA2E1]/30">
+                  <Phone className="w-3.5 h-3.5" />
+                  <span>Voice Calls Only</span>
                 </span>
                 <span className="text-xs text-slate-400 flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-[#648486]" /> Available Daily
+                  <Clock className="w-3.5 h-3.5 text-[#1FA2E1]" /> Direct Lines
                 </span>
               </div>
 
-              <div className="text-2xl sm:text-3xl font-bold text-white tracking-wide font-sans mb-2">
-                071 302 3708
+              <div className="space-y-2 mb-4">
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-slate-400 font-medium">Line 1:</span>
+                  <a
+                    href="tel:+94719203976"
+                    className="text-lg sm:text-xl font-bold text-white hover:text-[#1FA2E1] transition-colors"
+                  >
+                    071 920 3976
+                  </a>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-xs text-slate-400 font-medium">Line 2:</span>
+                  <a
+                    href="tel:+94713023708"
+                    className="text-lg sm:text-xl font-bold text-white hover:text-[#1FA2E1] transition-colors"
+                  >
+                    071 302 3708
+                  </a>
+                </div>
               </div>
 
-              <p className="text-xs text-slate-400 mb-6">
-                Alternative contact line & direct phone assistance.
+              <p className="text-[11px] text-slate-400 mb-5">
+                Note: These two numbers are for direct telephone voice calls only (No WhatsApp).
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-3 pt-2">
+            <div className="grid grid-cols-2 gap-3 pt-1">
               <a
-                href="tel:+94713023708"
-                className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/25 text-white font-medium text-xs sm:text-sm transition-all border border-white/10"
+                href="tel:+94719203976"
+                className="flex items-center justify-center gap-1.5 py-3 px-3 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/25 text-white font-medium text-xs transition-all border border-white/10"
               >
-                <Phone className="w-4 h-4 text-[#1FA2E1]" />
-                <span>Call Now</span>
+                <Phone className="w-3.5 h-3.5 text-[#1FA2E1]" />
+                <span>Call 071 920 3976</span>
               </a>
 
               <a
-                href="https://wa.me/94713023708"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] active:scale-[0.98] text-white font-medium text-xs sm:text-sm shadow-md transition-all"
+                href="tel:+94713023708"
+                className="flex items-center justify-center gap-1.5 py-3 px-3 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/25 text-white font-medium text-xs transition-all border border-white/10"
               >
-                <MessageCircle className="w-4 h-4" />
-                <span>WhatsApp</span>
+                <Phone className="w-3.5 h-3.5 text-[#648486]" />
+                <span>Call 071 302 3708</span>
               </a>
             </div>
           </motion.div>
 
-          {/* Location & Directions Card */}
+          {/* Card 3: Location & Directions Card */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

@@ -61,7 +61,7 @@ export default function MainView({
         </main>
         <Footer logoUrl={logoUrl} />
 
-        {/* Mobile Floating Quick Action Bar */}
+        {/* Mobile Floating Quick Action Bar (Exclusively +94773838251 for WhatsApp) */}
         <AnimatePresence>
           {showMobileBar && (
             <motion.div
@@ -80,7 +80,7 @@ export default function MainView({
               </a>
 
               <a
-                href="https://wa.me/94719203976"
+                href="https://wa.me/94773838251"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex-1 flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] active:scale-[0.98] text-white text-xs font-semibold shadow-md transition-all"

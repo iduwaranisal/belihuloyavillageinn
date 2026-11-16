@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HelpCircle, ChevronDown, Sparkles } from "lucide-react";
+import { HelpCircle, ChevronDown } from "lucide-react";
 
 interface FAQItem {
   question: string;
@@ -51,7 +51,7 @@ const faqs: FAQItem[] = [
     category: "Reservations",
     question: "How do I make a reservation or check availability?",
     answer:
-      "You can select your dates using our online booking section above or message us directly on WhatsApp (+94 71 920 3976). We will promptly confirm available rooms, answer your questions, and hold your reservation with personalized care.",
+      "You can select your dates using our online booking section or message us directly on WhatsApp (+94 77 383 8251). We will promptly confirm available rooms, answer your questions, and hold your reservation with personalized care.",
   },
 ];
 

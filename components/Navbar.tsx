@@ -191,11 +191,12 @@ export default function Navbar({ logoUrl = "/image/logo/logo.jpg" }: NavbarProps
                   className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-slate-100 dark:bg-[#0B2031] text-slate-700 dark:text-slate-200 border border-slate-200 dark:border-[#1E384D] text-xs font-semibold"
                 >
                   <Phone className="w-3.5 h-3.5 text-[#1FA2E1]" />
-                  <span>Call Line 1</span>
+                  <span>Call 071 920 3976</span>
                 </a>
 
+                {/* Exclusively +94773838251 for WhatsApp */}
                 <a
-                  href="https://wa.me/94719203976"
+                  href="https://wa.me/94773838251"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center justify-center gap-1.5 py-2.5 px-3 rounded-xl bg-[#25D366]/15 text-[#25D366] border border-[#25D366]/30 text-xs font-semibold"

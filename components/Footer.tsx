@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MapPin, Phone, Heart, ExternalLink } from "lucide-react";
+import { MapPin, Phone, MessageCircle, Heart, ExternalLink } from "lucide-react";
 
 interface FooterProps {
   logoUrl?: string;
@@ -55,7 +55,7 @@ export default function Footer({ logoUrl = "/image/logo/logo.jpg" }: FooterProps
           </div>
 
           {/* Quick Nav Links */}
-          <div className="md:col-span-4 space-y-2.5">
+          <div className="md:col-span-3 space-y-2.5">
             <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#1FA2E1]">
               Quick Links
             </span>
@@ -88,24 +88,38 @@ export default function Footer({ logoUrl = "/image/logo/logo.jpg" }: FooterProps
           </div>
 
           {/* Direct Lines */}
-          <div className="md:col-span-3 space-y-2">
+          <div className="md:col-span-4 space-y-2.5">
             <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-[#1FA2E1]">
               Inquiries & Bookings
             </span>
             <div className="space-y-2 text-xs sm:text-sm text-slate-300">
+              {/* WhatsApp Hotline */}
+              <a
+                href="https://wa.me/94773838251"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 hover:text-[#25D366] transition-colors py-1 group"
+              >
+                <MessageCircle className="w-4 h-4 text-[#25D366] shrink-0" />
+                <span className="font-sans font-semibold text-white group-hover:text-[#25D366]">
+                  077 383 8251 (WhatsApp)
+                </span>
+              </a>
+
+              {/* Voice Lines */}
               <a
                 href="tel:+94719203976"
                 className="flex items-center gap-2 hover:text-[#1FA2E1] transition-colors py-1"
               >
-                <Phone className="w-3.5 h-3.5 text-[#1FA2E1]" />
-                <span className="font-sans font-medium">071 920 3976</span>
+                <Phone className="w-3.5 h-3.5 text-[#1FA2E1] shrink-0" />
+                <span className="font-sans font-medium">071 920 3976 (Call Only)</span>
               </a>
               <a
                 href="tel:+94713023708"
                 className="flex items-center gap-2 hover:text-[#1FA2E1] transition-colors py-1"
               >
-                <Phone className="w-3.5 h-3.5 text-[#648486]" />
-                <span className="font-sans font-medium">071 302 3708</span>
+                <Phone className="w-3.5 h-3.5 text-[#648486] shrink-0" />
+                <span className="font-sans font-medium">071 302 3708 (Call Only)</span>
               </a>
             </div>
           </div>

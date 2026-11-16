@@ -6,7 +6,6 @@ import {
   Calendar,
   MessageCircle,
   Sparkles,
-  CheckCircle2,
   ShieldCheck,
   User,
   Phone,
@@ -51,7 +50,8 @@ export default function BookingSection() {
       .join("\n");
 
     const encoded = encodeURIComponent(text);
-    const url = `https://wa.me/94719203976?text=${encoded}`;
+    // Exclusively using +94773838251 for WhatsApp
+    const url = `https://wa.me/94773838251?text=${encoded}`;
     window.open(url, "_blank");
   };
 
@@ -220,7 +220,7 @@ export default function BookingSection() {
               </button>
 
               <p className="text-[11px] text-center text-slate-500 dark:text-slate-400">
-                Direct communication with your host. No advance payment required online.
+                Direct WhatsApp communication with your host (+94 77 383 8251). No advance payment required online.
               </p>
             </form>
           </motion.div>
@@ -279,7 +279,7 @@ export default function BookingSection() {
 
               <div className="mt-6 pt-5 border-t border-[#1E384D] flex items-center gap-2.5 text-xs text-slate-300">
                 <ShieldCheck className="w-4 h-4 text-[#25D366] shrink-0" />
-                <span>Instant host confirmation directly via WhatsApp chat</span>
+                <span>Instant host confirmation via WhatsApp (+94 77 383 8251)</span>
               </div>
             </div>
 
@@ -291,7 +291,7 @@ export default function BookingSection() {
 
               <div className="space-y-3 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#1FA2E1] shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-[#1FA2E1] shrink-0 mt-0.5" />
                   <span>
                     <strong>Personalized Attention:</strong> Speak directly with
                     the host to tailor your stay and itinerary.
@@ -299,7 +299,7 @@ export default function BookingSection() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#1FA2E1] shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-[#1FA2E1] shrink-0 mt-0.5" />
                   <span>
                     <strong>Flexible Schedule:</strong> Custom check-in and
                     check-out times accommodated according to your travel plans.
@@ -307,7 +307,7 @@ export default function BookingSection() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <CheckCircle2 className="w-4 h-4 text-[#1FA2E1] shrink-0 mt-0.5" />
+                  <ShieldCheck className="w-4 h-4 text-[#1FA2E1] shrink-0 mt-0.5" />
                   <span>
                     <strong>Hassle-Free Coordination:</strong> We arrange
                     bonfires and waterfall transport before you even arrive.
