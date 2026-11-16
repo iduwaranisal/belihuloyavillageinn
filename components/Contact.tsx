@@ -1,18 +1,15 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
   Phone,
   MessageCircle,
   MapPin,
-  Calendar,
-  Send,
   Clock,
   Sparkles,
   ExternalLink,
   Navigation,
-  User,
 } from "lucide-react";
 
 const GOOGLE_MAPS_LINK = "https://maps.app.goo.gl/BjEKWJSvSM5Av8qo7";
@@ -22,31 +19,6 @@ const EMBED_MAP_URL =
   "https://maps.google.com/maps?q=6.704203,80.777512&hl=en&z=15&output=embed";
 
 export default function Contact() {
-  const [senderName, setSenderName] = useState("");
-  const [senderPhone, setSenderPhone] = useState("");
-  const [message, setMessage] = useState("");
-
-  const handleWhatsAppSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    const text = [
-      "Hello Belihuloya Village Inn! 🌿",
-      "I would like to get in touch:",
-      "",
-      `👤 Name: ${senderName || "Not provided"}`,
-      `📞 Contact: ${senderPhone || "Not provided"}`,
-      message ? `📝 Message: ${message}` : "",
-      "",
-      "Could you please get back to me? Thank you!",
-    ]
-      .filter(Boolean)
-      .join("\n");
-
-    const encoded = encodeURIComponent(text);
-    const url = `https://wa.me/94719203976?text=${encoded}`;
-    window.open(url, "_blank");
-  };
-
   return (
     <section
       id="contact"
@@ -58,7 +30,7 @@ export default function Contact() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 lg:mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -90,233 +62,169 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-sm sm:text-base md:text-lg text-slate-300 font-sans leading-relaxed"
           >
-            We are here to assist with room bookings, bonfire arrangements,
-            private transport, and guided waterfall excursions.
+            Reach out directly for reservations, bonfire arrangements, private
+            transfers, and waterfall excursions.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-          {/* Direct Contact Numbers & Location */}
+        {/* Direct Contact & Location Cards Grid (Clean 3-column layout) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Primary Phone Card */}
           <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.7 }}
-            className="lg:col-span-6 space-y-5 sm:space-y-6"
+            transition={{ duration: 0.6 }}
+            className="rounded-2xl p-6 bg-[#071521]/85 backdrop-blur-md border border-[#1E384D] hover:border-[#1FA2E1]/50 transition-all duration-300 shadow-xl flex flex-col justify-between"
           >
             <div>
-              <h3 className="font-serif text-xl sm:text-2xl font-bold text-white mb-1.5 sm:mb-2">
-                Direct Contact Lines
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
-                Reach us anytime via direct phone call or quick WhatsApp chat.
-                We speak English and Sinhala.
-              </p>
-            </div>
-
-            {/* Primary Phone Card */}
-            <div className="rounded-2xl p-5 sm:p-6 bg-[#071521]/80 backdrop-blur-md border border-[#1E384D] hover:border-[#1FA2E1]/50 transition-all duration-300 shadow-lg">
-              <div className="flex items-center justify-between mb-3.5 sm:mb-4">
-                <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-[#1FA2E1]/20 text-[#1FA2E1] border border-[#1FA2E1]/30">
+              <div className="flex items-center justify-between mb-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#1FA2E1]/20 text-[#1FA2E1] border border-[#1FA2E1]/30">
                   Primary Line
                 </span>
-                <span className="text-[11px] sm:text-xs text-slate-400 flex items-center gap-1">
+                <span className="text-xs text-slate-400 flex items-center gap-1">
                   <Clock className="w-3.5 h-3.5 text-[#1FA2E1]" /> Available Daily
                 </span>
               </div>
 
-              <div className="text-2xl sm:text-3xl font-bold text-white tracking-wide font-sans mb-4 sm:mb-5">
+              <div className="text-2xl sm:text-3xl font-bold text-white tracking-wide font-sans mb-2">
                 071 920 3976
               </div>
 
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-                <a
-                  href="tel:+94719203976"
-                  className="flex items-center justify-center gap-2 py-3 px-3.5 sm:px-4 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/25 text-white font-medium text-xs sm:text-sm transition-all border border-white/10"
-                >
-                  <Phone className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-[#1FA2E1]" />
-                  <span>Call Now</span>
-                </a>
-
-                <a
-                  href="https://wa.me/94719203976"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-3 px-3.5 sm:px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] active:scale-[0.98] text-white font-medium text-xs sm:text-sm shadow-md transition-all"
-                >
-                  <MessageCircle className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
-                  <span>WhatsApp</span>
-                </a>
-              </div>
+              <p className="text-xs text-slate-400 mb-6">
+                Direct inquiries, bookings & WhatsApp support.
+              </p>
             </div>
 
-            {/* Secondary Phone Card */}
-            <div className="rounded-2xl p-5 sm:p-6 bg-[#071521]/80 backdrop-blur-md border border-[#1E384D] hover:border-[#1FA2E1]/50 transition-all duration-300 shadow-lg">
-              <div className="flex items-center justify-between mb-3.5 sm:mb-4">
-                <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-1 rounded-full text-[11px] sm:text-xs font-semibold bg-[#648486]/20 text-[#8ba9ab] border border-[#648486]/30">
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <a
+                href="tel:+94719203976"
+                className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/25 text-white font-medium text-xs sm:text-sm transition-all border border-white/10"
+              >
+                <Phone className="w-4 h-4 text-[#1FA2E1]" />
+                <span>Call Now</span>
+              </a>
+
+              <a
+                href="https://wa.me/94719203976"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] active:scale-[0.98] text-white font-medium text-xs sm:text-sm shadow-md transition-all"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Secondary Phone Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="rounded-2xl p-6 bg-[#071521]/85 backdrop-blur-md border border-[#1E384D] hover:border-[#1FA2E1]/50 transition-all duration-300 shadow-xl flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-center justify-between mb-4">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-[#648486]/20 text-[#8ba9ab] border border-[#648486]/30">
                   Secondary Line
                 </span>
-                <span className="text-[11px] sm:text-xs text-slate-400 flex items-center gap-1">
+                <span className="text-xs text-slate-400 flex items-center gap-1">
                   <Clock className="w-3.5 h-3.5 text-[#648486]" /> Available Daily
                 </span>
               </div>
 
-              <div className="text-2xl sm:text-3xl font-bold text-white tracking-wide font-sans mb-4 sm:mb-5">
+              <div className="text-2xl sm:text-3xl font-bold text-white tracking-wide font-sans mb-2">
                 071 302 3708
               </div>
 
-              <div className="grid grid-cols-2 gap-2.5 sm:gap-3">
-                <a
-                  href="tel:+94713023708"
-                  className="flex items-center justify-center gap-2 py-3 px-3.5 sm:px-4 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/25 text-white font-medium text-xs sm:text-sm transition-all border border-white/10"
-                >
-                  <Phone className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-[#1FA2E1]" />
-                  <span>Call Now</span>
-                </a>
-
-                <a
-                  href="https://wa.me/94713023708"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-3 px-3.5 sm:px-4 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] active:scale-[0.98] text-white font-medium text-xs sm:text-sm shadow-md transition-all"
-                >
-                  <MessageCircle className="w-3.5 sm:w-4 h-3.5 sm:h-4" />
-                  <span>WhatsApp</span>
-                </a>
-              </div>
+              <p className="text-xs text-slate-400 mb-6">
+                Alternative contact line & direct phone assistance.
+              </p>
             </div>
 
-            {/* Location & Directions Card (Clean, no raw coordinates) */}
-            <div className="rounded-2xl p-5 sm:p-6 bg-[#071521]/80 border border-[#1E384D] shadow-lg space-y-3.5">
-              <div className="flex items-start gap-3">
+            <div className="grid grid-cols-2 gap-3 pt-2">
+              <a
+                href="tel:+94713023708"
+                className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/25 text-white font-medium text-xs sm:text-sm transition-all border border-white/10"
+              >
+                <Phone className="w-4 h-4 text-[#1FA2E1]" />
+                <span>Call Now</span>
+              </a>
+
+              <a
+                href="https://wa.me/94713023708"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 py-3 px-3.5 rounded-xl bg-[#25D366] hover:bg-[#20ba5a] active:scale-[0.98] text-white font-medium text-xs sm:text-sm shadow-md transition-all"
+              >
+                <MessageCircle className="w-4 h-4" />
+                <span>WhatsApp</span>
+              </a>
+            </div>
+          </motion.div>
+
+          {/* Location & Directions Card */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.15 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="md:col-span-2 lg:col-span-1 rounded-2xl p-6 bg-[#071521]/85 backdrop-blur-md border border-[#1E384D] hover:border-[#1FA2E1]/50 transition-all duration-300 shadow-xl flex flex-col justify-between"
+          >
+            <div>
+              <div className="flex items-start gap-3 mb-3">
                 <div className="p-2.5 rounded-xl bg-[#1FA2E1]/15 text-[#1FA2E1] shrink-0 mt-0.5">
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-sm sm:text-base font-semibold text-white">
+                  <h4 className="text-base font-semibold text-white">
                     Our Location & Address
                   </h4>
-                  <p className="text-xs sm:text-sm text-slate-300 mt-1 leading-relaxed">
+                  <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                     Pambahinna, Belihuloya, Sabaragamuwa Province, Sri Lanka.
                   </p>
-                  <p className="text-[11px] sm:text-xs text-[#8ba9ab] mt-1">
-                    Situated off the scenic Colombo-Batticaloa (A4) highway.
-                  </p>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
-                <a
-                  href={GOOGLE_MAPS_LINK}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl bg-[#1FA2E1] hover:bg-[#178ec6] active:scale-[0.98] text-white font-medium text-xs shadow-md transition-all"
-                >
-                  <span>Open in Google Maps</span>
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-
-                <a
-                  href={GOOGLE_MAPS_DIRECTIONS}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 py-2.5 px-3.5 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/25 text-white font-medium text-xs border border-white/10 transition-all"
-                >
-                  <Navigation className="w-3.5 h-3.5 text-[#1FA2E1]" />
-                  <span>Get Driving Directions</span>
-                </a>
-              </div>
-            </div>
-          </motion.div>
-
-          {/* Quick Message Box */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.7, delay: 0.15 }}
-            className="lg:col-span-6"
-          >
-            <div className="rounded-2xl p-5 sm:p-8 bg-[#071521] border border-[#1E384D] shadow-2xl relative">
-              <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1.5">
-                Send Us a Quick Message
-              </h3>
-              <p className="text-xs sm:text-sm text-slate-300 mb-5 leading-relaxed">
-                Have questions or need assistance? Leave your details below and
-                we will respond immediately on WhatsApp.
+              <p className="text-xs text-[#8ba9ab] mb-6">
+                Situated off the scenic Colombo-Batticaloa (A4) highway, close to
+                waterfalls and misty trailheads.
               </p>
+            </div>
 
-              <form onSubmit={handleWhatsAppSubmit} className="space-y-4">
-                {/* Full Name */}
-                <div>
-                  <label className="block text-[11px] sm:text-xs font-medium uppercase tracking-wider text-slate-300 mb-1.5 flex items-center gap-1.5">
-                    <User className="w-3.5 h-3.5 text-[#1FA2E1]" />
-                    <span>Your Name</span>
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={senderName}
-                    onChange={(e) => setSenderName(e.target.value)}
-                    placeholder="Enter your name"
-                    className="w-full px-3.5 py-3 rounded-xl bg-[#0B2031] border border-[#1E384D] text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#1FA2E1] transition-all"
-                  />
-                </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+              <a
+                href={GOOGLE_MAPS_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-[#1FA2E1] hover:bg-[#178ec6] active:scale-[0.98] text-white font-medium text-xs shadow-md transition-all"
+              >
+                <span>Google Maps</span>
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
 
-                {/* Phone */}
-                <div>
-                  <label className="block text-[11px] sm:text-xs font-medium uppercase tracking-wider text-slate-300 mb-1.5 flex items-center gap-1.5">
-                    <Phone className="w-3.5 h-3.5 text-[#1FA2E1]" />
-                    <span>Phone Number</span>
-                  </label>
-                  <input
-                    type="tel"
-                    required
-                    value={senderPhone}
-                    onChange={(e) => setSenderPhone(e.target.value)}
-                    placeholder="07X XXX XXXX"
-                    className="w-full px-3.5 py-3 rounded-xl bg-[#0B2031] border border-[#1E384D] text-white text-base sm:text-sm focus:outline-none focus:ring-2 focus:ring-[#1FA2E1] transition-all"
-                  />
-                </div>
-
-                {/* Message */}
-                <div>
-                  <label className="block text-[11px] sm:text-xs font-medium uppercase tracking-wider text-slate-300 mb-1.5">
-                    Your Message
-                  </label>
-                  <textarea
-                    rows={3}
-                    value={message}
-                    onChange={(e) => setMessage(e.target.value)}
-                    placeholder="Ask about rooms, bonfire night, transport or directions..."
-                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#0B2031] border border-[#1E384D] text-white text-base sm:text-sm placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#1FA2E1] transition-all resize-none"
-                  />
-                </div>
-
-                {/* Submit to WhatsApp */}
-                <button
-                  type="submit"
-                  className="w-full py-3.5 sm:py-4 px-5 rounded-xl bg-[#1FA2E1] hover:bg-[#1789c0] active:scale-[0.98] text-white font-semibold text-sm sm:text-base shadow-lg shadow-[#1FA2E1]/25 hover:shadow-xl flex items-center justify-center gap-2.5 transition-all duration-300 cursor-pointer"
-                >
-                  <Send className="w-4 h-4" />
-                  <span>Send Message via WhatsApp</span>
-                </button>
-
-                <p className="text-[10px] sm:text-[11px] text-center text-slate-400 mt-1.5">
-                  Opens WhatsApp directly with your message to +94 71 920 3976.
-                </p>
-              </form>
+              <a
+                href={GOOGLE_MAPS_DIRECTIONS}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 py-3 px-3 rounded-xl bg-white/10 hover:bg-white/20 active:bg-white/25 text-white font-medium text-xs border border-white/10 transition-all"
+              >
+                <Navigation className="w-3.5 h-3.5 text-[#1FA2E1]" />
+                <span>Directions</span>
+              </a>
             </div>
           </motion.div>
         </div>
 
-        {/* Interactive Google Map Section (Clean, no raw coordinates) */}
+        {/* Interactive Google Map */}
         <motion.div
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.15 }}
           transition={{ duration: 0.7 }}
-          className="mt-10 sm:mt-16 rounded-2xl overflow-hidden border border-[#1E384D] bg-[#071521] shadow-2xl"
+          className="mt-10 sm:mt-12 rounded-2xl overflow-hidden border border-[#1E384D] bg-[#071521] shadow-2xl"
         >
           {/* Map Top Header */}
           <div className="px-4 sm:px-6 py-3.5 bg-[#0B2031] border-b border-[#1E384D] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
